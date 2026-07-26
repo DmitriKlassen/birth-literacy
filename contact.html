@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact Birth Literacy to ask about birth doula, birth planning, or postpartum support in London, Ontario and surrounding communities.">
+    <title>Contact | Birth Literacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Literata:opsz,wght@7..72,500;7..72,600;7..72,700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo-condensed.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="masthead" aria-label="Birth Literacy">
+        <p class="masthead__kicker"><span aria-hidden="true"></span>Practical knowledge,<br>real choices</p>
+        <a class="brand" href="index.html" aria-label="Birth Literacy home"><img src="assets/logo.svg" width="271" height="131" alt="Birth Literacy"></a>
+      </div>
+      <div class="nav-shell">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle__lines" aria-hidden="true"></span><span class="nav-toggle__text">Menu</span></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+          <a href="services.html">Services</a>
+          <a href="birth-education.html">Birth Education</a>
+          <a href="resources.html">Resources</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-main" id="main">
+      <section class="page-hero" aria-labelledby="page-title">
+        <div class="page-hero__copy">
+          <p class="eyebrow"><span aria-hidden="true"></span>Begin with a conversation</p>
+          <h1 id="page-title">Tell me what support would help.</h1>
+          <div class="measure-mark" aria-hidden="true"></div>
+          <p class="page-hero__lede">You do not need a polished plan before reaching out. Share what you know—your due date, location, birth setting, and what feels important right now.</p>
+        </div>
+        <figure class="page-hero__figure">
+          <img src="assets/art-consultation.jpg" width="1536" height="1024" alt="Mixed-media illustration of a birth consultation at a table with planning notes and a pelvis model.">
+          <figcaption>One clear conversation is enough to begin.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-block" aria-labelledby="contact-title">
+        <div class="contact-grid">
+          <aside class="contact-panel">
+            <p class="eyebrow"><span aria-hidden="true"></span>Direct email</p>
+            <h2 id="contact-title">Reach Christina.</h2>
+            <a class="email-link" href="mailto:hello@birthliteracy.ca">hello@birthliteracy.ca</a>
+            <p>Birth Literacy serves families in London, Middlesex, Elgin, and surrounding communities in Southwestern Ontario.</p>
+            <ul class="plain-list">
+              <li>Birth doula care</li>
+              <li>Private birth planning</li>
+              <li>Postpartum and food-prep support</li>
+            </ul>
+          </aside>
+
+          <form class="contact-form" action="mailto:hello@birthliteracy.ca" method="post" enctype="text/plain">
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input id="name" name="Name" type="text" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input id="email" name="Email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="due-date">Estimated due date</label>
+              <input id="due-date" name="Estimated due date" type="text" placeholder="Month and year">
+            </div>
+            <div class="form-field">
+              <label for="location">Your location</label>
+              <input id="location" name="Location" type="text" autocomplete="address-level2" placeholder="City or community">
+            </div>
+            <div class="form-field form-field--full">
+              <label for="service">What are you considering?</label>
+              <select id="service" name="Service">
+                <option value="">I am not sure yet</option>
+                <option>Labour and birth support</option>
+                <option>Birth planning session</option>
+                <option>Postpartum support</option>
+                <option>Food preparation support</option>
+              </select>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="message">What would be helpful to know?</label>
+              <textarea id="message" name="Message" placeholder="Tell me where you are in pregnancy, your planned birth setting, and any questions that matter right now." required></textarea>
+            </div>
+            <p class="form-note">Submitting opens your email app with these details. You can review the message before sending it.</p>
+            <button class="button button--primary" type="submit">Prepare email</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section-block" aria-labelledby="consult-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span aria-hidden="true"></span>What happens next</p>
+            <h2 id="consult-title">A simple first conversation.</h2>
+          </div>
+          <p>A consultation gives us room to talk through your location, due date, care team, birth hopes, and the type of support that would be useful. It is also a chance to see whether the fit feels comfortable before making any decision.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="assets/logo-condensed.svg" width="70" height="44" alt="Birth Literacy">
+      <p>Birth Literacy</p><span aria-hidden="true"></span><p>Practical knowledge, real choices</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
