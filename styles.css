@@ -692,7 +692,7 @@ h3 {
 
 .service-detail__body img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: clamp(8rem, 10vw, 9.5rem);
   object-fit: cover;
   object-position: center;
   border: 1px solid rgba(46, 45, 41, 0.34);
@@ -1384,6 +1384,7 @@ h3 {
 
   .service-detail__body img {
     width: min(100%, 19rem);
+    height: 8.5rem;
   }
 
   .topic-row,
