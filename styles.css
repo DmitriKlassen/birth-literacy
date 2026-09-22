@@ -1094,6 +1094,7 @@ h3 {
 }
 
 .contact-panel {
+  container-type: inline-size;
   padding: clamp(1.5rem, 3vw, 3rem);
   border: 1px solid rgba(46, 45, 41, 0.34);
   background: rgba(255, 250, 241, 0.34);
@@ -1233,6 +1234,7 @@ h3 {
 }
 
 .contact-card__body {
+  container-type: inline-size;
   position: relative;
   z-index: 2;
   display: flex;
@@ -1249,7 +1251,8 @@ h3 {
 .email-link {
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(1.65rem, 2.7vw, 3rem);
+  font-size: clamp(0.875rem, 1.8vw, 1.8rem);
+  font-size: clamp(0.875rem, 6cqi, 1.8rem);
   font-weight: 650;
   line-height: 1.05;
   overflow-wrap: anywhere;
@@ -1582,8 +1585,9 @@ h3 {
   }
 
   .about-profile__aside img {
-    width: 13rem;
-    margin: 0 auto -2rem;
+    width: 7rem;
+    height: auto;
+    margin: 0 auto;
   }
 
   .values-ledger {
@@ -1661,10 +1665,6 @@ h3 {
 
   .hero__figure figcaption {
     font-size: 0.76rem;
-  }
-
-  .email-link {
-    font-size: clamp(1.35rem, 7.2vw, 1.85rem);
   }
 
   .support-visual {
