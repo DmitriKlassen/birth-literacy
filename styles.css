@@ -71,6 +71,14 @@ svg {
   max-width: 100%;
 }
 
+img[src*="botanical-"] {
+  mix-blend-mode: multiply;
+}
+
+img[src$="botanical-home-education.png"] {
+  scale: 0.88;
+}
+
 a {
   color: inherit;
 }
@@ -244,15 +252,20 @@ main {
 }
 
 .hero {
-  grid-template-columns: minmax(18rem, 0.86fr) minmax(22rem, 0.82fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   min-height: clamp(22rem, 31vw, 29rem);
   padding: clamp(0.75rem, 1.7vw, 1.8rem) 0 clamp(1rem, 2vw, 2rem);
+  padding-inline: clamp(2.25rem, 5vw, 5.5rem);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .hero__content {
   grid-column: 1;
-  max-width: 34rem;
+  position: relative;
+  z-index: 2;
+  max-width: 38rem;
 }
 
 .hero__content .eyebrow {
@@ -349,28 +362,26 @@ h3 {
 }
 
 .hero__figure {
-  grid-column: 2;
-  justify-self: end;
-  position: relative;
-  width: min(100%, 31rem);
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: 0;
+  width: min(62%, 48rem);
+  height: 100%;
   margin: 0;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  pointer-events: none;
 }
 
 .hero__figure::before {
-  position: absolute;
-  inset: clamp(0.7rem, 1.3vw, 1.1rem) clamp(-0.8rem, -1vw, -0.4rem) clamp(-0.8rem, -1vw, -0.4rem) clamp(0.7rem, 1.2vw, 1rem);
-  z-index: -1;
-  border: 1px solid rgba(46, 45, 41, 0.32);
-  content: "";
+  content: none;
 }
 
 .hero__image {
   width: 100%;
-  height: clamp(17.5rem, 24vw, 23rem);
-  object-fit: cover;
-  object-position: 50% 54%;
-  border: 1px solid rgba(46, 45, 41, 0.4);
-  box-shadow: var(--shadow);
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 0.46;
 }
 
 .hero__figure figcaption {
@@ -450,11 +461,13 @@ h3 {
 .support-note {
   position: relative;
   display: grid;
-  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   align-content: start;
   min-height: 19.5rem;
-  padding: clamp(1.15rem, 2vw, 1.8rem);
+  padding: clamp(4.2rem, 6vw, 5.4rem) clamp(1.15rem, 2vw, 1.8rem) clamp(1.15rem, 2vw, 1.8rem);
   border-left: 1px solid rgba(46, 45, 41, 0.34);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .support-note {
@@ -478,6 +491,7 @@ h3 {
   color: var(--bone-light);
   font-size: 0.75rem;
   font-weight: 700;
+  z-index: 3;
 }
 
 .support-visual,
@@ -486,18 +500,44 @@ h3 {
   width: 100%;
   aspect-ratio: 1;
   height: auto;
-  object-fit: cover;
-  border: 1px solid rgba(46, 45, 41, 0.34);
-  box-shadow: 0 12px 30px rgba(46, 45, 41, 0.08);
+  object-fit: contain;
+  opacity: 0.72;
 }
 
 .support-visual {
-  width: min(100%, 12rem);
-  margin: 0 0 1.3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 0;
+  width: clamp(11.5rem, 14vw, 13rem);
+  margin: 0;
+  opacity: 0.38;
+  transform: none;
 }
 
 .support-visual--note {
-  margin: 0 0 1.3rem;
+  margin: 0;
+  transform: none;
+}
+
+.support-feature--fertility .support-visual {
+  transform: none;
+}
+
+.support-feature--birth .support-visual {
+  transform: none;
+}
+
+.support-feature--doula .support-visual {
+  transform: none;
+}
+
+.support-feature .card-label,
+.support-feature h3,
+.support-feature > p:not(.card-label),
+.support-feature .text-link {
+  position: relative;
+  z-index: 2;
 }
 
 .support-feature p,
@@ -537,15 +577,19 @@ h3 {
 }
 
 .page-hero {
-  display: grid;
-  grid-template-columns: minmax(18rem, 0.82fr) minmax(22rem, 1fr);
-  gap: clamp(2rem, 6vw, 7rem);
-  align-items: center;
+  position: relative;
+  display: block;
+  min-height: clamp(22rem, 30vw, 28rem);
   padding: clamp(1.5rem, 3vw, 2.8rem) 0 clamp(3rem, 6vw, 6rem);
+  padding-inline: clamp(2.25rem, 5vw, 5.5rem);
   border-bottom: 1px solid rgba(46, 45, 41, 0.32);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .page-hero__copy {
+  position: relative;
+  z-index: 2;
   max-width: 39rem;
 }
 
@@ -561,26 +605,26 @@ h3 {
 }
 
 .page-hero__figure {
-  position: relative;
-  width: min(100%, 37rem);
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: 0;
+  width: min(60%, 46rem);
+  height: 100%;
   margin: 0;
-  justify-self: end;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  pointer-events: none;
 }
 
 .page-hero__figure::before {
-  position: absolute;
-  inset: 0.9rem -0.8rem -0.8rem 0.9rem;
-  z-index: -1;
-  border: 1px solid rgba(46, 45, 41, 0.32);
-  content: "";
+  content: none;
 }
 
 .page-hero__figure img {
   width: 100%;
-  height: clamp(15rem, 22vw, 19rem);
-  object-fit: cover;
-  border: 1px solid rgba(46, 45, 41, 0.4);
-  box-shadow: var(--shadow);
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 0.42;
 }
 
 .page-hero__figure figcaption {
@@ -597,7 +641,42 @@ h3 {
 }
 
 .page-hero--compact .page-hero__figure {
-  width: min(100%, 32rem);
+  width: min(58%, 40rem);
+}
+
+.education-page {
+  padding-top: 0;
+}
+
+.education-coming-soon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 48rem;
+  min-height: clamp(26rem, 56vh, 38rem);
+  margin-left: clamp(2.25rem, 5vw, 5.5rem);
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  border-bottom: 1px solid rgba(46, 45, 41, 0.32);
+}
+
+.education-coming-soon h1 {
+  max-width: 10ch;
+}
+
+.education-coming-soon__lede {
+  max-width: 39rem;
+  margin: 0;
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+  line-height: 1.65;
+}
+
+.education-coming-soon > p:not(.eyebrow):not(.education-coming-soon__lede) {
+  margin: 1.1rem 0 0;
+  color: rgba(46, 45, 41, 0.76);
+}
+
+.education-coming-soon .text-link {
+  align-self: flex-start;
 }
 
 .section-block {
@@ -666,9 +745,15 @@ h3 {
 }
 
 .service-detail__body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(11rem, 0.62fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
+  position: relative;
+  display: block;
+  padding-right: clamp(5rem, 12vw, 10rem);
+  isolation: isolate;
+}
+
+.service-detail__body > div {
+  position: relative;
+  z-index: 2;
 }
 
 .service-detail__body > div > p:first-child,
@@ -691,11 +776,48 @@ h3 {
 }
 
 .service-detail__body img {
-  width: 100%;
-  height: clamp(8rem, 10vw, 9.5rem);
-  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: clamp(9rem, 13vw, 11rem);
+  height: clamp(9rem, 13vw, 11rem);
+  object-fit: contain;
   object-position: center;
-  border: 1px solid rgba(46, 45, 41, 0.34);
+  opacity: 0.38;
+  transform: none;
+}
+
+.services-page .service-detail {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.services-page .service-detail__label,
+.services-page .service-detail__body > div {
+  position: relative;
+  z-index: 2;
+}
+
+.services-page .service-detail__body {
+  position: static;
+  padding-right: clamp(4rem, 10vw, 8rem);
+}
+
+.services-page .service-detail__body img {
+  top: 0;
+  right: 0;
+  width: min(42%, 36rem);
+  height: 100%;
+  padding: clamp(1rem, 2vw, 2rem);
+  opacity: 0.2;
+  transform: none;
+}
+
+.services-page .service-detail:nth-of-type(even) .service-detail__body img {
+  right: 0;
+  transform: none;
 }
 
 .plain-list,
@@ -899,20 +1021,33 @@ h3 {
 }
 
 .about-profile__aside {
+  position: relative;
   padding-right: clamp(1rem, 3vw, 3rem);
   border-right: 1px solid rgba(46, 45, 41, 0.3);
+  overflow: visible;
+  isolation: isolate;
 }
 
 .about-profile__aside img {
-  width: 100%;
+  width: min(100%, 15rem);
   aspect-ratio: 1;
-  object-fit: cover;
-  border: 1px solid rgba(46, 45, 41, 0.34);
+  margin: 0 auto -2rem;
+  padding: 0.5rem;
+  object-fit: contain;
+  opacity: 0.38;
+  transform: none;
 }
 
 .about-profile__aside .card-label {
+  position: relative;
+  z-index: 2;
   margin-top: 1.2rem;
   color: var(--olive);
+}
+
+.about-profile__aside > p:last-child {
+  position: relative;
+  z-index: 2;
 }
 
 .editorial-copy {
@@ -1076,23 +1211,33 @@ h3 {
 }
 
 .contact-card {
-  display: grid;
-  gap: clamp(1rem, 2vw, 1.5rem);
+  position: relative;
+  display: block;
+  min-height: clamp(18rem, 25vw, 23rem);
   border-left: 1px solid rgba(46, 45, 41, 0.34);
-  padding-left: clamp(1.2rem, 2.6vw, 2.6rem);
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.2rem, 2.6vw, 2.6rem);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .contact-card img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  height: auto;
-  object-fit: cover;
-  border: 1px solid rgba(46, 45, 41, 0.34);
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: 0;
+  width: 72%;
+  height: 100%;
+  padding: 1rem;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 0.32;
 }
 
 .contact-card__body {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  max-width: 30rem;
   min-width: 0;
 }
 
@@ -1139,14 +1284,9 @@ h3 {
     display: none;
   }
 
-  .hero__content,
   .hero__figure {
-    grid-column: 1;
-  }
-
-  .hero__figure {
-    justify-self: center;
-    width: min(100%, 31rem);
+    right: 0;
+    width: min(68%, 40rem);
   }
 
   .support-intro {
@@ -1280,7 +1420,11 @@ h3 {
 
   .hero {
     min-height: 0;
-    padding-top: 1.35rem;
+    padding: 1.35rem 0 3rem;
+  }
+
+  .education-coming-soon {
+    margin-left: 0;
   }
 
   h1 {
@@ -1294,12 +1438,17 @@ h3 {
   }
 
   .hero__figure {
-    margin-top: 1.45rem;
-    width: 100%;
+    inset: 0 0 0 auto;
+    width: 92%;
+    height: 100%;
+    margin: 0;
+    padding: 0.75rem 0;
   }
 
   .hero__image {
-    height: clamp(17rem, 76vw, 22rem);
+    height: 100%;
+    object-position: right bottom;
+    opacity: 0.3;
   }
 
   .index-line {
@@ -1361,16 +1510,22 @@ h3 {
   }
 
   .page-hero {
-    padding-top: 1.35rem;
+    min-height: 0;
+    padding: 1.35rem 0 3rem;
   }
 
   .page-hero__figure {
-    width: 100%;
-    margin-top: 2rem;
+    inset: 0 0 0 auto;
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    padding: 0.75rem 0;
   }
 
   .page-hero__figure img {
-    height: clamp(12rem, 48vw, 16rem);
+    height: 100%;
+    object-position: right bottom;
+    opacity: 0.28;
   }
 
   .section-heading,
@@ -1382,9 +1537,31 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .service-detail__body {
+    padding-right: 4.5rem;
+  }
+
   .service-detail__body img {
-    width: min(100%, 19rem);
-    height: 8.5rem;
+    top: 0;
+    right: 0;
+    width: 9rem;
+    height: 9rem;
+    opacity: 0.3;
+  }
+
+  .services-page .service-detail__body {
+    padding-right: 2.5rem;
+  }
+
+  .services-page .service-detail__body img,
+  .services-page .service-detail:nth-of-type(even) .service-detail__body img {
+    top: 0;
+    right: 0;
+    width: min(82vw, 24rem);
+    height: 100%;
+    padding: 0.75rem;
+    opacity: 0.17;
+    transform: none;
   }
 
   .topic-row,
@@ -1405,7 +1582,8 @@ h3 {
   }
 
   .about-profile__aside img {
-    width: min(100%, 22rem);
+    width: 13rem;
+    margin: 0 auto -2rem;
   }
 
   .values-ledger {
@@ -1435,12 +1613,18 @@ h3 {
   }
 
   .contact-card {
-    padding-left: 0;
+    min-height: 18rem;
+    padding: 2.5rem 1rem;
     border-left: 0;
   }
 
   .contact-card img {
-    aspect-ratio: 4 / 3;
+    inset: 0 0 0 auto;
+    width: 90%;
+    height: 100%;
+    padding: 0.75rem;
+    aspect-ratio: auto;
+    opacity: 0.25;
   }
 
   .site-footer {
@@ -1484,9 +1668,11 @@ h3 {
   }
 
   .support-visual {
-    width: min(100%, 13rem);
-    margin-left: auto;
-    margin-right: auto;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 12rem;
+    margin: 0;
+    opacity: 0.32;
   }
 
   .principle {
