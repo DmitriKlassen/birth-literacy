@@ -365,23 +365,32 @@ h3 {
   position: absolute;
   inset: 0 0 0 auto;
   z-index: 0;
-  width: min(62%, 48rem);
+  width: min(48%, 42rem);
   height: 100%;
   margin: 0;
-  padding: clamp(0.75rem, 2vw, 1.5rem);
+  padding: clamp(0.75rem, 2vw, 1.5rem) 0;
   pointer-events: none;
 }
 
-.hero__figure::before {
-  content: none;
-}
-
-.hero__image {
+.hero__botanical {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: right center;
-  opacity: 0.46;
+  opacity: 0.36;
+}
+
+.hero__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 1;
 }
 
 .hero__figure figcaption {
@@ -1028,13 +1037,16 @@ h3 {
   isolation: isolate;
 }
 
-.about-profile__aside img {
-  width: min(100%, 15rem);
-  aspect-ratio: 1;
-  margin: 0 auto -2rem;
-  padding: 0.5rem;
-  object-fit: contain;
-  opacity: 0.38;
+.about-profile__aside .about-profile__portrait {
+  display: block;
+  width: min(100%, 22rem);
+  height: min(27.5rem, 125vw);
+  margin: 0 auto 2rem;
+  padding: 0;
+  border: 1px solid rgba(46, 45, 41, 0.28);
+  object-fit: cover;
+  object-position: 50% 30%;
+  opacity: 1;
   transform: none;
 }
 
@@ -1289,7 +1301,7 @@ h3 {
 
   .hero__figure {
     right: 0;
-    width: min(68%, 40rem);
+    width: min(54%, 36rem);
   }
 
   .support-intro {
@@ -1423,7 +1435,7 @@ h3 {
 
   .hero {
     min-height: 0;
-    padding: 1.35rem 0 3rem;
+    padding: 1.35rem 0 0;
   }
 
   .education-coming-soon {
@@ -1441,23 +1453,30 @@ h3 {
   }
 
   .hero__figure {
-    inset: 0 0 0 auto;
-    width: 92%;
-    height: 100%;
-    margin: 0;
-    padding: 0.75rem 0;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(23rem, 118vw, 35rem);
+    margin: 2rem 0 0;
+    padding: 0;
   }
 
   .hero__image {
+    bottom: -0.4rem;
     height: 100%;
-    object-position: right bottom;
+    object-position: center bottom;
+    opacity: 1;
+  }
+
+  .hero__botanical {
+    object-position: center;
     opacity: 0.3;
   }
 
   .index-line {
     grid-template-columns: 1fr;
     justify-items: center;
-    margin-top: 0.4rem;
+    margin-top: 0;
     text-align: center;
   }
 
@@ -1584,10 +1603,10 @@ h3 {
     border-bottom: 1px solid rgba(46, 45, 41, 0.3);
   }
 
-  .about-profile__aside img {
-    width: 7rem;
-    height: auto;
-    margin: 0 auto;
+  .about-profile__aside .about-profile__portrait {
+    width: min(100%, 22rem);
+    height: min(27.5rem, 125vw);
+    margin: 0 auto 2rem;
   }
 
   .values-ledger {
